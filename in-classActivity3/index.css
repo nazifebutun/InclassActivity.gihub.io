@@ -1,0 +1,59 @@
+.advertisement
+{
+	position: relative;
+	width:100px;
+	height:150px; 
+	border-color:black;
+	border-width:2px; 
+	background-color:gray; 
+	color:white;
+}
+
+.nazife {
+	position: absolute;
+	top: 0px;
+	left: 270px;
+	right: 100px;
+}
+
+.arzu {
+	width: 100%;
+}
+.header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.main{
+	text-align:justify;
+	
+}
+
+
+.title {
+	position: absolute;
+	top: 0px;
+	left: 500px;
+} 
+
+.head {
+	position: absolute;
+	margin-top: 850px;
+	margin-left: 856px;
+}
+
+.links{
+	position: absolute;
+	margin-top: 900px;
+	margin-left: 848px;
+
+}
+
+.image img{
+	float: left;
+	width: 250px;
+	height: 200px;
+	margin: 0px 10px 0px 0px;
+}
+
