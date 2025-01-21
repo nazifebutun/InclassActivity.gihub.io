@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Listesi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ff2402;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .menu-item {
+            display: none;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .menu-item ul {
+            padding-left: 0;
+            margin: 10px 0;
+            list-style-type: none;
+        }
+
+        .menu-item ul li {
+            list-style-type: none;
+            margin-bottom: 5px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .days {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .days button {
+            background-color: #ff2402;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .days button:hover {
+            background-color: #db2408;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .days {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .days button {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script>
+        function showMenu(day) {
+            const allMenus = document.querySelectorAll('.menu-item');
+            allMenus.forEach(menu => menu.style.display = 'none');
+            document.querySelector(`#menu-${day}`).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('tr-TR', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('current-date').textContent = formattedDate;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        Günlük Yemek Listesi
+        <div id="current-date"></div>
+    </header>
+    <div class="container">
+        <div class="days">
+            <button onclick="showMenu('monday')">Pazartesi</button>
+            <button onclick="showMenu('tuesday')">Salı</button>
+            <button onclick="showMenu('wednesday')">Çarşamba</button>
+            <button onclick="showMenu('thursday')">Perşembe</button>
+            <button onclick="showMenu('friday')">Cuma</button>
+            <button onclick="showMenu('saturday')">Cumartesi</button>
+            <button onclick="showMenu('sunday')">Pazar</button>
+        </div>
+
+        <div id="menu-monday" class="menu-item">
+            <h3>Pazartesi Menüsü</h3>
+            <ul>
+                <li>Mercimek Çorbası</li>
+                <li>Tavuk Sote</li>
+                <li>Çoban Salatası</li>
+            </ul>
+        </div>
+        <div id="menu-tuesday" class="menu-item">
+            <h3>Salı Menüsü</h3>
+            <ul>
+                <li>Ezogelin Çorbası</li>
+                <li>Köfte</li>
+                <li>Mevsim Salata</li>
+            </ul>
+        </div>
+        <div id="menu-wednesday" class="menu-item">
+            <h3>Çarşamba Menüsü</h3>
+            <ul>
+                <li>Domates Çorbası</li>
+                <li>Et Sote</li>
+                <li>Pirinç Pilavı</li>
+            </ul>
+        </div>
+        <div id="menu-thursday" class="menu-item">
+            <h3>Perşembe Menüsü</h3>
+            <ul>
+                <li>Tarhana Çorbası</li>
+                <li>Balık Izgara</li>
+                <li>Akdeniz Salatası</li>
+            </ul>
+        </div>
+        <div id="menu-friday" class="menu-item">
+            <h3>Cuma Menüsü</h3>
+            <ul>
+                <li>Yayla Çorbası</li>
+                <li>Izgara Tavuk</li>
+                <li>Bulgur Pilavı</li>
+            </ul>
+        </div>
+        <div id="menu-saturday" class="menu-item">
+            <h3>Cumartesi Menüsü</h3>
+            <ul>
+                <li>Şehriye Çorbası</li>
+                <li>Mantı</li>
+                <li>Mevsim Yeşillikleri</li>
+            </ul>
+        </div>
+        <div id="menu-sunday" class="menu-item">
+            <h3>Pazar Menüsü</h3>
+            <ul>
+                <li>İşkembe Çorbası</li>
+                <li>Etli Güveç</li>
+                <li>Havuç Salatası</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Yemek Listesi. Tüm hakları saklıdır.
+        <span style="font-size: 0.8em;">Nazife Bütün</span>
+    </footer>
+</body>
+</html>
